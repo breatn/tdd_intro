@@ -24,3 +24,4 @@ def test_multiples_of_five_return_buzz(n):
 @pytest.mark.parametrize("n", [15, 30, 45], ids=["fifteen", "thirty", "forty-five"])
 def test_multiples_of_fifteen_return_fizzbuzz(n):
     assert fizzbuzz(n) == 'FizzBuzz'
+
