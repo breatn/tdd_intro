@@ -31,12 +31,21 @@ digits = {
 #     return sum(-a if a < b else a for a, b in paired)
 
 def roman_to_int(roman: str) -> int:
+    if not roman:
+        raise ValueError("String cannot be empty")
+
+
+    if not all(a in digits for a in roman):
+        raise ValueError("Invalid string")
+
     a_value, b_value  = it.tee(
-        map(
-            lambda x: digits[x],
-            list(roman)
+    map(
+        lambda x: digits[x],
+        list(roman)
         )
     )
+
+
 
     paired = zip(a_value,
                  it.chain(
